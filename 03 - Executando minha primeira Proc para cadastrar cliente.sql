@@ -1,0 +1,43 @@
+USE TABELA_TESTE
+
+EXEC sp_help 'Clientes';
+GO
+-- Criando a minha função para popular a minha tabela de forma mais fácil
+CREATE PROCEDURE CadastrarCliente
+    @NOME_CLIENTE VARCHAR(100),
+    @CPF VARCHAR(11),
+    @DATA_NASCIMENTO DATE,
+    @RENDA_MENSAL DECIMAL (18,2),
+    @PROFISSAO VARCHAR (300),
+    @SCORE INT,
+    @STATUS_CLI VARCHAR (100),
+    @SEXO VARCHAR (10)
+AS
+BEGIN
+    INSERT INTO Clientes
+(NOME_CLIENTE,CPF, DATA_NASCIMENTO,RENDA_MENSAL,PROFISSAO, SCORE, STATUS_CLI, SEXO)
+VALUES
+(
+    @NOME_CLIENTE,
+    @CPF,
+    @DATA_NASCIMENTO,
+    @RENDA_MENSAL,
+    @PROFISSAO,
+    @SCORE,
+    @STATUS_CLI,
+    @SEXO
+)
+END;
+GO
+
+EXEC CadastrarCliente
+    @NOME_CLIENTE = 'João Da Silva Lopes',
+    @CPF = '58934578108',
+    @DATA_NASCIMENTO = '1998-07-12',
+    @RENDA_MENSAL = 1518.00,
+    @PROFISSAO = 'CLT',
+    @SCORE = 780,
+    @STATUS_CLI = 'Ativo',
+    @SEXO = 'LGBTQ+';
+
+SELECT * FROM Clientes
