@@ -1,13 +1,13 @@
 -- Isso é uma DML (Data Manipulation Language), manipulação de dados
 EXEC CadastrarCliente
-    @NOME_CLIENTE = 'Fábio Pacce Alves',
-    @CPF = '89103976109',
-    @DATA_NASCIMENTO = '1976-07-12',
+    @NOME_CLIENTE = 'Jessica Mendes Oliveira',
+    @CPF = '12343578934',
+    @DATA_NASCIMENTO = '1986-02-07',
     @RENDA_MENSAL = 2300.00,
-    @PROFISSAO = 'Dublador',
-    @SCORE = 289,
-    @STATUS_CLI = 'Pendente',
-    @SEXO = 'M';
+    @PROFISSAO = 'Gerente Sr. de Marketing',
+    @SCORE = 700,
+    @STATUS_CLI = 'Ativo',
+    @SEXO = 'F';
 
 SELECT * FROM Clientes
 
